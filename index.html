@@ -1,0 +1,1371 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galdino Seguros</title>
+    <style>
+        .titulo {
+            color: #5B9DF9;
+        }
+    </style>    
+    <meta name="description" content="Galdino Seguros - Corretora especializada em seguros para pessoas físicas e empresas. Cotação rápida, atendimento personalizado e proteção sob medida.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: { 50:'#eff6ff',100:'#dbeafe',200:'#bfdbfe',300:'#93c5fd',400:'#60a5fa',500:'#3b82f6',600:'#2563eb',700:'#1d4ed8',800:'#1e40af',900:'#1e3a8a',950:'#172554' },
+                        brand: { blue:'#2563eb', dark:'#1e3a8a', light:'#60a5fa', navy:'#0f172a', sky:'#0ea5e9' }
+                    },
+                    fontFamily: { sans: ['Inter', 'system-ui', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { font-family: 'Inter', system-ui, sans-serif; scroll-behavior: smooth; }
+        .gradient-hero { background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 25%, #2563eb 50%, #3b82f6 75%, #60a5fa 100%); }
+        .gradient-dark { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #1e40af 100%); }
+        .gradient-card { background: linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); }
+        .glass { background: rgba(255,255,255,0.1); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.2); }
+        .card-hover { transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .card-hover:hover { transform: translateY(-8px); box-shadow: 0 25px 50px -12px rgba(37,99,235,0.25); }
+        .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
+        @keyframes pulseGlow { 0%,100%{ box-shadow: 0 0 0 0 rgba(37,99,235,0.4); } 50%{ box-shadow: 0 0 0 12px rgba(37,99,235,0); } }
+        .float-whatsapp { animation: floatW 2s ease-in-out infinite; }
+        @keyframes floatW { 0%,100%{ transform: translateY(0); } 50%{ transform: translateY(-6px); } }
+        .fade-up { opacity: 0; transform: translateY(30px); transition: all 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .fade-up.visible { opacity: 1; transform: translateY(0); }
+        .counter-value { font-variant-numeric: tabular-nums; }
+        .partner-logo { filter: grayscale(100%); opacity: 0.6; transition: all 0.3s; }
+        .partner-logo:hover { filter: grayscale(0%); opacity: 1; }
+        .nav-active { color: #93c5fd; border-bottom: 2px solid #93c5fd; }
+        .hero-pattern { background-image: radial-gradient(circle at 20% 50%, rgba(96,165,250,0.15) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(14,165,233,0.1) 0%, transparent 50%), radial-gradient(circle at 50% 80%, rgba(37,99,235,0.1) 0%, transparent 50%); }
+        .shimmer { background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.1) 50%, transparent 100%); background-size: 200% 100%; animation: shimmer 3s ease-in-out infinite; }
+        @keyframes shimmer { 0%{ background-position: -200% 0; } 100%{ background-position: 200% 0; } }
+        .insurance-icon { width: 56px; height: 56px; }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f5f9; }
+        ::-webkit-scrollbar-thumb { background: #93c5fd; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #2563eb; }
+        .mobile-menu { transform: translateX(100%); transition: transform 0.35s cubic-bezier(0.4,0,0.2,1); }
+        .mobile-menu.open { transform: translateX(0); }
+        .overlay { opacity: 0; pointer-events: none; transition: opacity 0.35s; }
+        .overlay.open { opacity: 1; pointer-events: auto; }
+    </style>
+</head>
+<body class="bg-white text-gray-800 antialiased">
+
+    <!-- ============ HEADER FIXO ============ -->
+<header id="header" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-slate-200 backdrop-blur-md">        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 lg:h-20">
+                <!-- Logo -->
+                <a href="#inicio" class="flex items-center gap-2 group">
+                    <div class="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center shadow-lg group-hover:shadow-brand-blue/40 transition-shadow">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold text-brand-blue">Galdino Seguros</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex items-center gap-1">
+                    <a href="#inicio" class="nav-link px-3 py-2 text-sm font-medium text-black hover:text-brand-blue hover:bg-slate-100 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        Início
+                    </a>
+                    <a href="#sobre" class="nav-link px-3 py-2 text-sm font-medium text-black hover:text-brand-blue hover:bg-slate-100 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        Sobre
+                    </a>
+                    <a href="#seguros" class="nav-link px-3 py-2 text-sm font-medium text-black hover:text-brand-blue hover:bg-slate-100 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        Seguros
+                    </a>
+                    <a href="#sinistros" class="nav-link px-3 py-2 text-sm font-medium text-black hover:text-brand-blue hover:bg-slate-100 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        Sinistros
+                    </a>
+                    <a href="#parceiros" class="nav-link px-3 py-2 text-sm font-medium text-black hover:text-brand-blue hover:bg-slate-100 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        Parceiros
+                    </a>
+                    <a href="#localizacao" class="nav-link px-3 py-2 text-sm font-medium text-black hover:text-brand-blue hover:bg-slate-100 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        Localização
+                    </a>
+                    <a href="#contato" class="nav-link px-3 py-2 text-sm font-medium text-black hover:text-brand-blue hover:bg-slate-100 rounded-lg transition-all duration-300 ease-in-out hover:scale-105">
+                        Contato
+                    </a>
+                </nav>
+
+                <!-- Desktop CTAs -->
+                <div class="hidden lg:flex items-center gap-3">
+                    <a href="https://wa.me/5513988034156" target="_blank"
+                    class="px-4 py-2.5 text-sm font-semibold text-black bg-white border border-slate-300 rounded-xl hover:bg-slate-100 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105">
+                        <i data-lucide="headphones" class="w-4 h-4 inline mr-1"></i>
+                        Falar com Especialista
+                    </a>
+
+                    <a href="https://wa.me/5513988034156" target="_blank"
+                    class="px-5 py-2.5 text-sm font-bold text-white bg-brand-blue rounded-xl hover:bg-brand-dark shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out hover:scale-105">
+                        Solicitar Cotação
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="menuBtn" class="lg:hidden text-brand-blue p-2 rounded-lg hover:bg-slate-100 transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6" id="menuIcon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu Overlay -->
+   <div id="menuOverlay" class="overlay fixed inset-0 bg-black/40 z-50"></div>
+
+<!-- Mobile Menu -->
+<div id="mobileMenu" class="mobile-menu fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white z-50 shadow-2xl border-l border-slate-200">
+    <div class="p-6">
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 rounded-lg bg-brand-blue flex items-center justify-center">
+                    <i data-lucide="shield-check" class="w-5 h-5 text-white"></i>
+                </div>
+                <span class="text-lg font-bold text-brand-blue">Galdino Seguros</span>
+            </div>
+            <button id="closeMenuBtn" class="text-black p-2 rounded-lg hover:bg-slate-100 transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+        </div>
+
+        <nav class="flex flex-col gap-1">
+            <a href="#inicio" class="mobile-nav-link px-4 py-3 text-black hover:text-brand-blue hover:bg-slate-100 rounded-xl transition-all font-medium">Início</a>
+            <a href="#sobre" class="mobile-nav-link px-4 py-3 text-black hover:text-brand-blue hover:bg-slate-100 rounded-xl transition-all font-medium">Sobre</a>
+            <a href="#seguros" class="mobile-nav-link px-4 py-3 text-black hover:text-brand-blue hover:bg-slate-100 rounded-xl transition-all font-medium">Seguros</a>
+            <a href="#sinistros" class="mobile-nav-link px-4 py-3 text-black hover:text-brand-blue hover:bg-slate-100 rounded-xl transition-all font-medium">Sinistros</a>
+            <a href="#parceiros" class="mobile-nav-link px-4 py-3 text-black hover:text-brand-blue hover:bg-slate-100 rounded-xl transition-all font-medium">Parceiros</a>
+            <a href="#localizacao" class="mobile-nav-link px-4 py-3 text-black hover:text-brand-blue hover:bg-slate-100 rounded-xl transition-all font-medium">Localização</a>
+            <a href="#contato" class="mobile-nav-link px-4 py-3 text-black hover:text-brand-blue hover:bg-slate-100 rounded-xl transition-all font-medium">Contato</a>
+        </nav>
+
+        <div class="mt-8 space-y-3">
+            <a href="https://wa.me/5513988034156" target="_blank"
+               class="block w-full py-3 text-center font-semibold text-black border border-slate-300 rounded-xl hover:bg-slate-100 transition-all">
+                Falar com Especialista
+            </a>
+            <a href="https://wa.me/5513988034156" target="_blank"
+               class="block w-full py-3 text-center font-bold text-white bg-brand-blue rounded-xl hover:bg-brand-dark transition-all shadow-lg">
+                Solicitar Cotação
+            </a>
+        </div>
+    </div>
+</div>
+
+    <!-- ============ HERO SECTION ============ -->
+    <!-- ============ HERO SECTION ============ -->
+<section id="inicio" class="bg-white relative min-h-screen flex items-center overflow-hidden">
+    <!-- Decorative elements -->
+    <div class="absolute top-20 right-10 w-72 h-72 bg-blue-100 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-20 left-10 w-96 h-96 bg-blue-200/40 rounded-full blur-3xl"></div>
+    <div class="absolute top-1/2 right-1/4 w-40 h-40 bg-blue-300/30 rounded-full blur-2xl"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 lg:py-0 relative z-10">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+            <!-- Hero Content -->
+            <div class="text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full text-sm text-black mb-6 border border-blue-200">
+                    <i data-lucide="award" class="w-4 h-4 text-brand-blue"></i>
+                    <span>Excelência em corretagem de seguros</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-black leading-tight mb-6">
+                    Sua proteção.<br>
+                    <span class="text-brand-blue">Nossa missão.</span>
+                </h1>
+
+                <p class="text-lg sm:text-xl text-gray-700 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                    Na Galdino Seguros, você encontra consultoria especializada e as melhores soluções em seguros para pessoas físicas e empresas. Proteja o que mais importa com quem entende de verdade.
+                </p>
+
+                <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+
+    <a href="https://wa.me/5513988034156" target="_blank"
+       class="w-full sm:w-auto px-8 py-4 bg-brand-blue text-white font-bold rounded-2xl hover:bg-brand-dark transition-all shadow-xl hover:shadow-2xl text-lg pulse-glow">
+        <i data-lucide="file-text" class="w-5 h-5 inline mr-2"></i>
+        Peça sua Cotação
+    </a>
+
+    <a href="https://wa.me/5513988034156" target="_blank"
+       class="w-full sm:w-auto px-8 py-4 bg-white text-black font-semibold border-2 border-slate-300 rounded-2xl hover:bg-slate-100 transition-all text-lg">
+        <i data-lucide="message-circle" class="w-5 h-5 inline mr-2"></i>
+        Fale Conosco
+    </a>
+
+</div>
+
+                <div class="mt-10 flex flex-wrap items-center gap-6 justify-center lg:justify-start text-gray-700 text-sm">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-brand-blue"></i>
+                        <span>Atendimento personalizado</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-brand-blue"></i>
+                        <span>Cotação rápida e gratuita</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-brand-blue"></i>
+                        <span>Múltiplas seguradoras</span>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="check-circle" class="w-5 h-5 text-brand-blue"></i>
+                        <span>Suporte especializado</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero Image -->
+            <div class="hidden lg:flex justify-center relative">
+                <div class="relative w-full max-w-lg">
+                    <div class="absolute -inset-4 bg-blue-50 rounded-3xl blur-xl"></div>
+                    <img src="http://static.photos/office/640x360/15" alt="Proteção e segurança para você" class="relative rounded-3xl shadow-2xl border border-slate-200 w-full object-cover" style="aspect-ratio:16/10;">
+
+                    <!-- Floating cards -->
+                    <div class="absolute -left-10 top-10 bg-white/90 backdrop-blur-sm rounded-2xl p-4 flex items-center gap-3 animate-bounce shadow-lg border border-slate-200" style="animation-duration:3s">
+                        <div class="w-10 h-10 bg-green-500 rounded-xl flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-black font-bold text-sm">+2.500</p>
+                            <p class="text-gray-600 text-xs">Clientes protegidos</p>
+                        </div>
+                    </div>
+
+                    <div class="absolute -right-6 bottom-10 bg-white/90 backdrop-blur-sm rounded-2xl p-4 flex items-center gap-3 animate-bounce shadow-lg border border-slate-200" style="animation-duration:4s">
+                        <div class="w-10 h-10 bg-brand-blue rounded-xl flex items-center justify-center">
+                            <i data-lucide="phone-call" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <p class="text-black font-bold text-sm">24h</p>
+                            <p class="text-gray-600 text-xs">Atendimento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Wave bottom -->
+    <div class="absolute bottom-0 left-0 right-0">
+        <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 120L60 110C120 100 240 80 360 73.3C480 67 600 73 720 80C840 87 960 93 1080 93.3C1200 93 1320 87 1380 83.3L1440 80V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z" fill="white"/>
+        </svg>
+    </div>
+</section>
+
+    <!-- ============ NÚMEROS DE CONFIANÇA ============ -->
+    <section id="sobre" class="py-20 bg-white relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                    <i data-lucide="trending-up" class="w-4 h-4"></i>
+                    Números que geram confiança
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-4">
+                    Galdino Seguros em <span class="text-brand-blue">Números</span>
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    Anos de experiência e dedicação transformados em resultados que protegem o que é mais importante para você.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 fade-up">
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 text-center card-hover border border-primary-100">
+                    <div class="w-14 h-14 bg-brand-blue/10 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="shield" class="w-7 h-7 text-brand-blue"></i>
+                    </div>
+                    <p class="text-3xl lg:text-4xl font-extrabold text-brand-dark counter-value" data-target="10">0</p>
+                    <p class="text-sm font-bold text-brand-blue mb-1">Tipos de Seguro</p>
+                    <p class="text-xs text-gray-500">Coberturas disponíveis</p>
+                </div>
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 text-center card-hover border border-primary-100">
+                    <div class="w-14 h-14 bg-green-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="check-circle-2" class="w-7 h-7 text-green-600"></i>
+                    </div>
+                    <p class="text-3xl lg:text-4xl font-extrabold text-brand-dark counter-value" data-target="2500">0</p>
+                    <p class="text-sm font-bold text-brand-blue mb-1">Sinistros Acompanhados</p>
+                    <p class="text-xs text-gray-500">Com suporte total</p>
+                </div>
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 text-center card-hover border border-primary-100">
+                    <div class="w-14 h-14 bg-amber-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="smile" class="w-7 h-7 text-amber-500"></i>
+                    </div>
+                    <p class="text-3xl lg:text-4xl font-extrabold text-brand-dark counter-value" data-target="5800">0</p>
+                    <p class="text-sm font-bold text-brand-blue mb-1">Clientes Satisfeitos</p>
+                    <p class="text-xs text-gray-500">E crescendo</p>
+                </div>
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 text-center card-hover border border-primary-100">
+                    <div class="w-14 h-14 bg-purple-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="map-pin" class="w-7 h-7 text-purple-600"></i>
+                    </div>
+                    <p class="text-3xl lg:text-4xl font-extrabold text-brand-dark counter-value" data-target="45">0</p>
+                    <p class="text-sm font-bold text-brand-blue mb-1">Cidades Atendidas</p>
+                    <p class="text-xs text-gray-500">Abrangência nacional</p>
+                </div>
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 text-center card-hover border border-primary-100">
+                    <div class="w-14 h-14 bg-rose-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="handshake" class="w-7 h-7 text-rose-500"></i>
+                    </div>
+                    <p class="text-3xl lg:text-4xl font-extrabold text-brand-dark counter-value" data-target="15">0</p>
+                    <p class="text-sm font-bold text-brand-blue mb-1">Parceiros Credenciados</p>
+                    <p class="text-xs text-gray-500">Seguradoras de confiança</p>
+                </div>
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-6 text-center card-hover border border-primary-100">
+                    <div class="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i data-lucide="clock" class="w-7 h-7 text-teal-500"></i>
+                    </div>
+                    <p class="text-3xl lg:text-4xl font-extrabold text-brand-dark">12h<span class="text-brand-blue">h</span></p>
+                    <p class="text-sm font-bold text-brand-blue mb-1">Atendimento Diário</p>
+                    <p class="text-xs text-gray-500">Sempre disponível</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SEGUROS ============ -->
+    <section id="seguros" class="py-20 bg-gradient-to-b from-white via-primary-50/30 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                    <i data-lucide="shield" class="w-4 h-4"></i>
+                    Soluções completas de proteção
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-4">
+                    Nossos <span class="text-brand-blue">Seguros</span>
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    Proteção sob medida para cada etapa da sua vida e necessidade do seu negócio. Encontre a cobertura ideal com a gente.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-5 fade-up">
+
+                    <!-- Auto -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20Auto." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="car" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Auto</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Proteja seu veículo contra colisões, roubo e muito mais. Coberturas completas.</p>
+                        </div>
+                    </a>
+
+                    <!-- Residencial -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20Residencial." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="home" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Residencial</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Seu lar protegido contra incêndio, roubo, danos elétricos e intempéries.</p>
+                        </div>
+                    </a>
+
+                    <!-- Vida -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20de%20Vida." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="heart-pulse" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Vida</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Tranquilidade para você e proteção financeira para quem você ama.</p>
+                        </div>
+                    </a>
+
+                    <!-- Empresarial -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20Empresarial." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="building-2" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Empresarial</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Proteja seu patrimônio, estoque e operações contra imprevistos.</p>
+                        </div>
+                    </a>
+
+                    <!-- Saúde -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20Saúde." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="stethoscope" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Saúde</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Acesso à rede credenciada de qualidade e atendimento médico ágil.</p>
+                        </div>
+                    </a>
+
+                    <!-- Moto -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20Moto." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="bike" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Moto</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Cobertura dedicada para motociclistas, com assistência 24h inclusa.</p>
+                        </div>
+                    </a>
+
+                    <!-- Viagem -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20Viagem." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="plane" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Viagem</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Viaje com segurança. Cobertura médica, extravio e cancelamento.</p>
+                        </div>
+                    </a>
+
+                    <!-- Equipamentos -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20de%20Equipamentos." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="cog" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Equipamentos</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Proteção para máquinas, equipamentos e ferramentas de trabalho.</p>
+                        </div>
+                    </a>
+
+                    <!-- Frota -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20receber%20uma%20cotação%20para%20Seguro%20de%20Frota." target="_blank" class="block">
+                        <div class="group bg-white rounded-2xl p-6 card-hover border border-gray-100 hover:border-brand-blue/30 cursor-pointer shadow-sm hover:shadow-xl h-full">
+                            <div class="w-14 h-14 bg-blue-50 group-hover:bg-brand-blue rounded-2xl flex items-center justify-center mb-4 transition-colors">
+                                <i data-lucide="truck" class="w-7 h-7 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <h3 class="font-bold text-brand-dark mb-2 text-lg">Seguro Frota</h3>
+                            <p class="text-gray-500 text-sm leading-relaxed">Gestão eficiente e cobertura total para veículos comerciais e frotas.</p>
+                        </div>
+                    </a>
+
+                    <!-- Sob Medida -->
+                    <a href="https://wa.me/5513988034156?text=Olá!%20Tenho%20interesse%20em%20um%20Seguro%20Sob%20Medida%20e%20gostaria%20de%20mais%20informações." target="_blank" class="block">
+                        <div class="group bg-gradient-to-br from-brand-blue to-brand-dark rounded-2xl p-6 card-hover cursor-pointer shadow-sm hover:shadow-xl relative overflow-hidden h-full">
+                            <div class="shimmer absolute inset-0 rounded-2xl"></div>
+                            <div class="relative z-10">
+                                <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+                                    <i data-lucide="plus-circle" class="w-7 h-7 text-white"></i>
+                                </div>
+                                <h3 class="font-bold text-white mb-2 text-lg">Seguro Sob Medida</h3>
+                                <p class="text-white/80 text-sm leading-relaxed">Não encontrou? Fazemos sob medida para sua necessidade específica.</p>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>
+
+            <div class="text-center mt-12 fade-up">
+                <a href="#cotacao" class="inline-flex items-center gap-2 px-8 py-4 bg-brand-blue text-white font-bold rounded-2xl hover:bg-brand-dark transition-all shadow-lg hover:shadow-xl text-lg">
+                    <i data-lucide="file-text" class="w-5 h-5"></i>
+                    Solicitar Cotação Gratuita
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ COMO FUNCIONA ============ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                    <i data-lucide="route" class="w-4 h-4"></i>
+                    Processo simplificado
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-4">
+                    Como <span class="text-brand-blue">Funciona</span>?
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    Em apenas 4 passos simples, você garante a proteção ideal. Rápido, fácil e sem burocracia.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 fade-up">
+                <div class="relative text-center group">
+                    <div class="w-20 h-20 bg-primary-50 group-hover:bg-brand-blue rounded-3xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 shadow-sm group-hover:shadow-lg">
+                        <i data-lucide="file-plus-2" class="w-10 h-10 text-brand-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="absolute top-10 right-0 hidden lg:block w-[calc(100%-5rem)]">
+                        <div class="border-t-2 border-dashed border-primary-200 w-full"></div>
+                    </div>
+                    <span class="inline-block w-8 h-8 bg-brand-blue text-white font-bold rounded-full text-sm leading-8 mb-3">1</span>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Solicite sua Cotação</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Preencha o formulário ou entre em contato. É rápido e sem compromisso.</p>
+                </div>
+                <div class="relative text-center group">
+                    <div class="w-20 h-20 bg-primary-50 group-hover:bg-brand-blue rounded-3xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 shadow-sm group-hover:shadow-lg">
+                        <i data-lucide="search" class="w-10 h-10 text-brand-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="absolute top-10 right-0 hidden lg:block w-[calc(100%-5rem)]">
+                        <div class="border-t-2 border-dashed border-primary-200 w-full"></div>
+                    </div>
+                    <span class="inline-block w-8 h-8 bg-brand-blue text-white font-bold rounded-full text-sm leading-8 mb-3">2</span>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Análise Personalizada</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Nossos especialistas analisam seu perfil e buscam as melhores opções do mercado.</p>
+                </div>
+                <div class="relative text-center group">
+                    <div class="w-20 h-20 bg-primary-50 group-hover:bg-brand-blue rounded-3xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 shadow-sm group-hover:shadow-lg">
+                        <i data-lucide="check-square" class="w-10 h-10 text-brand-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <div class="absolute top-10 right-0 hidden lg:block w-[calc(100%-5rem)]">
+                        <div class="border-t-2 border-dashed border-primary-200 w-full"></div>
+                    </div>
+                    <span class="inline-block w-8 h-8 bg-brand-blue text-white font-bold rounded-full text-sm leading-8 mb-3">3</span>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Escolha a Melhor Cobertura</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Compare propostas e escolha a proteção ideal com o melhor custo-benefício.</p>
+                </div>
+                <div class="text-center group">
+                    <div class="w-20 h-20 bg-primary-50 group-hover:bg-green-500 rounded-3xl flex items-center justify-center mx-auto mb-6 transition-all duration-300 shadow-sm group-hover:shadow-lg">
+                        <i data-lucide="shield-check" class="w-10 h-10 text-brand-blue group-hover:text-white transition-colors"></i>
+                    </div>
+                    <span class="inline-block w-8 h-8 bg-green-500 text-white font-bold rounded-full text-sm leading-8 mb-3">4</span>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Suporte Completo</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Conte com a Galdino Seguros na contratação, sinistro e no dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ SINISTROS E SUPORTE ============ -->
+    <section id="sinistros" class="py-20 gradient-dark relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-blue/10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-72 h-72 bg-brand-sky/10 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full text-sm font-semibold mb-4 border border-white/20">
+                    <i data-lucide="siren" class="w-4 h-4 text-red-400"></i>
+                    Suporte quando você mais precisa
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-4">
+                    Sinistros e <span class="text-brand-light">Suporte</span>
+                </h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto">
+                    Acompanhamento completo de sinistros com total transparência, agilidade no atendimento e suporte especializado em todas as etapas do processo.
+                </p>
+            </div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 fade-up">
+                <a href="#" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 cursor-pointer backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-red-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="alert-triangle" class="w-7 h-7 text-red-400"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2">Aviso de Sinistro</h3>
+                    <p class="text-white/80 text-sm leading-relaxed mb-4">Comunique um sinistro de forma rápida e receba orientação imediata.</p>
+                </a>
+                <a href="#" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 cursor-pointer backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-amber-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-search" class="w-7 h-7 text-amber-400"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2">Acompanhar Sinistro</h3>
+                    <p class="text-white/80 text-sm leading-relaxed mb-4">Acompanhe em tempo real o status do seu sinistro com transparência total.</p>
+                    
+                </a>
+                <a href="#" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 cursor-pointer backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="headphones" class="w-7 h-7 text-blue-400"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2">Central de Atendimento</h3>
+                    <p class="text-white/80 text-sm leading-relaxed mb-4">Fale direto com nossa equipe especializada. Atendimento humanizado.</p>
+                    
+                </a>
+                <a href="#" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 cursor-pointer backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="life-buoy" class="w-7 h-7 text-green-400"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2">Solicitar Assistência</h3>
+                    <p class="text-white/80 text-sm leading-relaxed mb-4">Guincho, elétrica, encanador e mais serviços disponíveis 24h para você.</p>
+                    
+                </a>
+                <a href="#" class="group bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 rounded-2xl p-6 transition-all duration-300 cursor-pointer backdrop-blur-sm">
+                    <div class="w-14 h-14 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i data-lucide="file-text" class="w-7 h-7 text-purple-400"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2">2ª Via e Suporte</h3>
+                    <p class="text-white/80 text-sm leading-relaxed mb-4">Emita a segunda via da sua apólice, endosso e documentos quando necessário.</p>
+                   
+                </a>
+                <a href="#" class="group bg-gradient-to-br from-brand-blue to-brand-sky rounded-2xl p-6 transition-all duration-300 cursor-pointer shadow-xl relative overflow-hidden">
+                    <div class="shimmer absolute inset-0 rounded-2xl"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
+                            <i data-lucide="phone-call" class="w-7 h-7 text-white"></i>
+                        </div>
+                        <h3 class="text-white font-bold text-lg mb-2">Atendimento Emergencial 24h</h3>
+                        <p class="text-white/90 text-sm leading-relaxed mb-4">Precisa de ajuda urgente? Nossa equipe está disponível a qualquer momento.</p>
+                        
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DIFERENCIAIS ============ -->
+    <section class="py-20 bg-gradient-to-b from-white via-primary-50/20 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-up">
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                        <i data-lucide="star" class="w-4 h-4"></i>
+                        Por que nos escolher
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-6">
+                        Diferenciais da <span class="text-brand-blue">Galdino Seguros</span>
+                    </h2>
+                    <p class="text-lg text-gray-500 mb-8 leading-relaxed">
+                        Mais do que uma corretora, somos seu parceiro em proteção. Combinamos experiência, agilidade e transparência para oferecer o melhor em seguros.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 bg-primary-50 group-hover:bg-brand-blue rounded-xl flex items-center justify-center shrink-0 transition-colors">
+                                <i data-lucide="user-check" class="w-6 h-6 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark">Atendimento Personalizado</h4>
+                                <p class="text-gray-500 text-sm">Cada cliente é único. Entendemos suas necessidades e oferecemos soluções sob medida.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 bg-primary-50 group-hover:bg-brand-blue rounded-xl flex items-center justify-center shrink-0 transition-colors">
+                                <i data-lucide="graduation-cap" class="w-6 h-6 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark">Consultoria Especializada</h4>
+                                <p class="text-gray-500 text-sm">Corretores qualificados para orientar as melhores decisões em proteção.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 bg-primary-50 group-hover:bg-brand-blue rounded-xl flex items-center justify-center shrink-0 transition-colors">
+                                <i data-lucide="zap" class="w-6 h-6 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark">Agilidade na Cotação</h4>
+                                <p class="text-gray-500 text-sm">Respostas rápidas e propostas competitiveness em tempo recorde.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 group">
+                            <div class="w-12 h-12 bg-primary-50 group-hover:bg-brand-blue rounded-xl flex items-center justify-center shrink-0 transition-colors">
+                                <i data-lucide="handshake" class="w-6 h-6 text-brand-blue group-hover:text-white transition-colors"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-brand-dark">Parcerias com Diversas Seguradoras</h4>
+                                <p class="text-gray-500 text-sm">Trabalhamos com as principais seguradoras para oferecer as melhores condições.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fade-up relative">
+                    <div class="absolute -inset-4 bg-brand-blue/5 rounded-3xl blur-2xl"></div>
+                    <img src="http://static.photos/workspace/640x360/55" alt="Diferenciais Galdino Seguros" class="relative rounded-3xl shadow-2xl w-full object-cover" style="aspect-ratio:16/10;">
+                    <!-- Stats overlay -->
+                    <div class="absolute bottom-6 left-6 right-6 bg-white/90 backdrop-blur-md rounded-2xl p-4 shadow-xl">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <p class="text-2xl font-extrabold text-brand-blue">98%</p>
+                                <p class="text-xs text-gray-500">Satisfação</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-extrabold text-brand-blue">15+</p>
+                                <p class="text-xs text-gray-500">Seguradoras</p>
+                            </div>
+                            <div>
+                                <p class="text-2xl font-extrabold text-brand-blue">24h</p>
+                                <p class="text-xs text-gray-500">Atendimento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                    <i data-lucide="message-square-quote" class="w-4 h-4"></i>
+                    O que dizem nossos clientes
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-4">
+                    Depoimentos de <span class="text-brand-blue">Confiança</span>
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    A opinião dos nossos clientes é nossa melhor referência. Veja o que dizem sobre a Galdino Seguros.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6 fade-up">
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8 border border-primary-100 card-hover relative">
+                    <div class="absolute top-6 right-6">
+                        <i data-lucide="quote" class="w-10 h-10 text-brand-blue/10"></i>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">"Excelente atendimento! A Galdino Seguros me ajudou a encontrar o seguro auto perfeito. Quando precisei acionar, o suporte foi rápido e eficiente. Recomendo demais!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold text-lg">RC</div>
+                        <div>
+                            <p class="font-bold text-brand-dark">Ricardo Costa</p>
+                            <p class="text-sm text-gray-500">Seguro Auto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8 border border-primary-100 card-hover relative">
+                    <div class="absolute top-6 right-6">
+                        <i data-lucide="quote" class="w-10 h-10 text-brand-blue/10"></i>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">"Protegi minha casa e minha família com a Galdino. O processo foi super transparente e o corretor explicou tudo com paciência. Me sinto segura com eles!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-purple-600 rounded-full flex items-center justify-center text-white font-bold text-lg">AM</div>
+                        <div>
+                            <p class="font-bold text-brand-dark">Ana Maria</p>
+                            <p class="text-sm text-gray-500">Seguro Residencial</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gradient-to-br from-primary-50 to-white rounded-2xl p-8 border border-primary-100 card-hover relative">
+                    <div class="absolute top-6 right-6">
+                        <i data-lucide="quote" class="w-10 h-10 text-brand-blue/10"></i>
+                    </div>
+                    <div class="flex gap-1 mb-4">
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                        <i data-lucide="star" class="w-5 h-5 text-amber-400 fill-amber-400"></i>
+                    </div>
+                    <p class="text-gray-600 leading-relaxed mb-6">" thanks à Galdino Seguros, minha empresa está protegida com o seguro empresarial ideal. Atendimento de excelência e cotações muito competitivas. Parceria de verdade!"</p>
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-teal-600 rounded-full flex items-center justify-center text-white font-bold text-lg">PF</div>
+                        <div>
+                            <p class="font-bold text-brand-dark">Paulo Ferreira</p>
+                            <p class="text-sm text-gray-500">Seguro Empresarial</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ PARCEIROS / SEGURADORAS ============ -->
+    <section id="parceiros" class="py-20 bg-gradient-to-b from-gray-50 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                    <i data-lucide="handshake" class="w-4 h-4"></i>
+                    Parcerias de confiança
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-4">
+                    Seguradoras <span class="text-brand-blue">Parceiras</span>
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    Trabalhamos com as maiores e mais confiáveis seguradoras do mercado para garantir as melhores condições para você.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 fade-up">
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-red-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-red-100 transition-colors">
+                        <i data-lucide="shield" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">Porto Seguro</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-blue-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-blue-100 transition-colors">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-blue-700"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">Bradesco Seguros</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-green-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-green-100 transition-colors">
+                        <i data-lucide="shield-plus" class="w-8 h-8 text-green-700"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">SulAmérica</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-amber-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-amber-100 transition-colors">
+                        <i data-lucide="award" class="w-8 h-8 text-amber-600"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">Itaú Seguros</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-purple-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-purple-100 transition-colors">
+                        <i data-lucide="shield-half" class="w-8 h-8 text-purple-700"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">HDI Seguros</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-indigo-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-indigo-100 transition-colors">
+                        <i data-lucide="umbrella" class="w-8 h-8 text-indigo-600"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">Tokio Marine</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-orange-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-orange-100 transition-colors">
+                        <i data-lucide="flame" class="w-8 h-8 text-orange-600"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">Liberty Seguros</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-teal-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-teal-100 transition-colors">
+                        <i data-lucide="trees" class="w-8 h-8 text-teal-700"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">MAPFRE</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-sky-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-sky-100 transition-colors">
+                        <i data-lucide="database" class="w-8 h-8 text-sky-700"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">Allianz</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 flex flex-col items-center justify-center card-hover border border-gray-100 hover:border-brand-blue/30 shadow-sm partner-container group">
+                    <div class="w-16 h-16 bg-rose-50 rounded-2xl flex items-center justify-center mb-3 group-hover:bg-rose-100 transition-colors">
+                        <i data-lucide="crown" class="w-8 h-8 text-rose-700"></i>
+                    </div>
+                    <p class="font-bold text-brand-dark text-sm text-center">Azul Seguros</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ LOCALIZAÇÃO E CONTATO ============ -->
+    <section id="localizacao" class="py-20 bg-gradient-to-b from-white via-primary-50/30 to-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                    <i data-lucide="map-pin" class="w-4 h-4"></i>
+                    Estamos perto de você
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-4">
+                    Localização e <span class="text-brand-blue">Atendimento</span>
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    Venha nos visitar ou entre em contato por qualquer canal. Atendimento humanizado e rápido.
+                </p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-8 fade-up">
+                <!-- Map & Info -->
+                <div class="space-y-6">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+    <iframe
+        src="https://maps.google.com/maps?q=Rua%20Primeiro%20de%20Maio%2C%2077%2C%20Santos%2C%20SP&t=&z=15&ie=UTF8&iwloc=&output=embed"
+        class="w-full h-64 md:h-80"
+        style="border:0;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</div>
+                    <div class="grid sm:grid-cols-2 gap-4">
+                        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="clock" class="w-5 h-5 text-brand-blue"></i>
+                                </div>
+                                <h4 class="font-bold text-brand-dark">Horário</h4>
+                            </div>
+                            <p class="text-gray-500 text-sm">Seg a Sex: 8h às 18h</p>
+                            <p class="text-gray-500 text-sm">Sáb: 8h às 12h</p>                        </div>
+                        <div class="bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                            <div class="flex items-center gap-3 mb-3">
+                                <div class="w-10 h-10 bg-primary-50 rounded-xl flex items-center justify-center">
+                                    <i data-lucide="map-pin" class="w-5 h-5 text-brand-blue"></i>
+                                </div>
+                                <h4 class="font-bold text-brand-dark">Endereço</h4>
+                            </div>
+                            <p class="text-gray-500 text-sm">Rua Primeiro de Maio, 77</p>
+                            <p class="text-gray-500 text-sm">Santos - SP</p>
+                            <p class="text-gray-500 text-sm">CEP: 11035-181</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div id="contato" class="bg-white rounded-2xl p-8 border border-gray-100 shadow-xl">
+                    <h3 class="text-2xl font-bold text-brand-dark mb-2">Entre em Contato</h3>
+                    <p class="text-gray-500 text-sm mb-6">Preencha o formulário e nossa equipe retornará rapidamente.</p>
+                    <form id="contactForm" class="space-y-4">
+                        <div class="grid sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-dark mb-1">Nome completo*</label>
+                                <input type="text" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all text-sm" placeholder="Seu nome">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-semibold text-brand-dark mb-1">Telefone*</label>
+                                <input type="tel" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all text-sm" placeholder="(11) 99999-9999">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-brand-dark mb-1">E-mail*</label>
+                            <input type="email" required class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all text-sm" placeholder="seu@email.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-brand-dark mb-1">Tipo de seguro</label>
+                            <select class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all text-sm bg-white">
+                                <option value="">Selecione o tipo de seguro</option>
+                                <option>Seguro Auto</option>
+                                <option>Seguro Residencial</option>
+                                <option>Seguro Vida</option>
+                                <option>Seguro Empresarial</option>
+                                <option>Seguro Saúde</option>
+                                <option>Seguro Moto</option>
+                                <option>Seguro Viagem</option>
+                                <option>Seguro Equipamentos</option>
+                                <option>Seguro Frota</option>
+                                <option>Outro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-semibold text-brand-dark mb-1">Mensagem</label>
+                            <textarea rows="3" class="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-brand-blue focus:ring-2 focus:ring-brand-blue/20 outline-none transition-all text-sm resize-none" placeholder="Conte-nos como podemos ajudar..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-4 bg-brand-blue text-white font-bold rounded-xl hover:bg-brand-dark transition-all shadow-lg hover:shadow-xl text-lg">
+                            <i data-lucide="send" class="w-5 h-5 inline mr-2"></i>Enviar Mensagem
+                        </button>
+                    </form>
+                    <div id="formSuccess" class="hidden mt-4 p-4 bg-green-50 border border-green-200 rounded-xl text-center">
+                        <i data-lucide="check-circle" class="w-8 h-8 text-green-500 mx-auto mb-2"></i>
+                        <p class="text-green-800 font-semibold">Mensagem enviada com sucesso!</p>
+                        <p class="text-green-600 text-sm">Retornaremos em breve.</p>
+                    </div>
+                    <div class="mt-6 grid grid-cols-3 gap-3">
+                        <a href="tel:+5513988034156" class="flex flex-col items-center gap-2 p-3 bg-primary-50 rounded-xl hover:bg-brand-blue group transition-colors">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-blue group-hover:text-white transition-colors"></i>
+                            <span class="text-xs font-semibold text-brand-dark group-hover:text-white transition-colors">Telefone</span>
+                        </a>
+                        <a href="https://wa.me/5513988034156" target="_blank" class="flex flex-col items-center gap-2 p-3 bg-green-50 rounded-xl hover:bg-green-500 group transition-colors">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-green-600 group-hover:text-white transition-colors"></i>
+                            <span class="text-xs font-semibold text-brand-dark group-hover:text-white transition-colors">WhatsApp</span>
+                        </a>
+                        <a href="mailto:contato@galdinoseguros.com.br" class="flex flex-col items-center gap-2 p-3 bg-primary-50 rounded-xl hover:bg-brand-blue group transition-colors">
+                            <i data-lucide="mail" class="w-5 h-5 text-brand-blue group-hover:text-white transition-colors"></i>
+                            <span class="text-xs font-semibold text-brand-dark group-hover:text-white transition-colors">E-mail</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ FAQ ============ -->
+    <section class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-up">
+                <div class="inline-flex items-center gap-2 px-4 py-2 bg-primary-50 text-brand-blue rounded-full text-sm font-semibold mb-4">
+                    <i data-lucide="help-circle" class="w-4 h-4"></i>
+                    Tire suas dúvidas
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-brand-dark mb-4">
+                    Perguntas <span class="text-brand-blue">Frequentes</span>
+                </h2>
+                <p class="text-lg text-gray-500 max-w-2xl mx-auto">
+                    As dúvidas mais comuns sobre seguros, cotações e nossos serviços. Se não encontrar sua resposta, fale conosco!
+                </p>
+            </div>
+
+            <div class="space-y-4 fade-up" id="faqContainer">
+                <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-bold text-brand-dark pr-4">Como pedir uma cotação?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-blue shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="px-6 pb-6 text-gray-500 leading-relaxed">É muito simples! Basta clicar no botão "Solicitar Cotação" em nosso site, preencher o formulário com seus dados e tipo de seguro desejado. Nossa equipe retornará em até 24h com as melhores opções do mercado. Você também pode entrar em contato por WhatsApp ou telefone.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-bold text-brand-dark pr-4">Como funciona a contratação do seguro?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-blue shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="px-6 pb-6 text-gray-500 leading-relaxed">Após receber sua cotação e escolher a melhor cobertura, nosso corretor orienta você em todo o processo: análise das condições, envio de documentação, pagamento e emissão da apólice. Tudo de forma transparente e sem burocracia desenecessária.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-bold text-brand-dark pr-4">O que é sinistro?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-blue shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="px-6 pb-6 text-gray-500 leading-relaxed">Sinistro é qualquer evento coberto pela apólice do seguro, como acidentes, roubo, incêndio, danos à propriedade, entre outros. Quando ocorre um sinistro, você pode acionar a seguradora para receber a indenização ou assistência prevista no seu contrato.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-bold text-brand-dark pr-4">Como acionar assistência em um sinistro?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-blue shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="px-6 pb-6 text-gray-500 leading-relaxed">Em caso de sinistro, você pode acionar nosso atendimento 24h por telefone ou WhatsApp. Nossa equipe orientará você sobre os procedimentos, documentação necessária e dará todo o suporte durante o processo de regulação e indenização.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-bold text-brand-dark pr-4">Quais tipos de seguro vocês trabalham?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-blue shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="px-6 pb-6 text-gray-500 leading-relaxed">Trabalhamos com todos os tipos de seguro: Auto, Residencial, Vida, Empresarial, Saúde, Moto, Viagem, Equipamentos, Frota e muito mais. Somos uma corretora completa, com acesso às principais seguradoras do mercado para encontrar a melhor opção para suas necessidades.</p>
+                    </div>
+                </div>
+                <div class="faq-item bg-gradient-to-br from-primary-50 to-white rounded-2xl border border-primary-100 overflow-hidden">
+                    <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+                        <span class="font-bold text-brand-dark pr-4">Como falar com um corretor?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 text-brand-blue shrink-0 faq-icon transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-answer max-h-0 overflow-hidden transition-all duration-300">
+                        <p class="px-6 pb-6 text-gray-500 leading-relaxed">Você pode falar com nossos corretores por WhatsApp, telefone, e-mail ou com o formulário de contato em nosso site. Nosso time está disponível em horário comercial para consultoria e 24h para emergências. Atendimento personalizado é o nosso diferencial!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ CTA FINAL ============ -->
+    <section id="cotacao" class="py-20 gradient-hero relative overflow-hidden">
+        <div class="absolute inset-0 hero-pattern"></div>
+        <div class="absolute top-0 left-1/4 w-72 h-72 bg-white/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-10 right-1/4 w-96 h-96 bg-brand-sky/10 rounded-full blur-3xl"></div>
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 fade-up">
+            <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/10 text-white rounded-full text-sm font-semibold mb-6 border border-white/20 backdrop-blur-sm">
+                <i data-lucide="zap" class="w-4 h-4"></i>
+                Proteção começa com uma cotação
+            </div>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-6 leading-tight">
+                Proteja o que mais importa.<br>
+                <span class="text-brand-light">Solicite sua cotação agora!</span>
+            </h2>
+            <p class="text-xl text-white/80 mb-10 max-w-2xl mx-auto">
+                É rápido, gratuito e sem compromisso. Nossa equipe especializada irá encontrar a melhor proteção para você ou sua empresa.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#contato" class="w-full sm:w-auto px-10 py-5 bg-white text-brand-dark font-bold rounded-2xl hover:bg-brand-light hover:text-brand-dark transition-all shadow-xl text-lg">
+                    <i data-lucide="file-text" class="w-5 h-5 inline mr-2"></i>Solicitar Cotação
+                </a>
+                <a href="https://wa.me/5513988034156" target="_blank" class="w-full sm:w-auto px-10 py-5 bg-green-500 text-white font-bold rounded-2xl hover:bg-green-600 transition-all shadow-xl text-lg">
+                    <i data-lucide="message-circle" class="w-5 h-5 inline mr-2"></i>WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============ RODAPÉ ============ -->
+    <footer class="bg-brand-navy text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10">
+                <!-- Col 1 - Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-blue flex items-center justify-center">
+                            <i data-lucide="shield-check" class="w-6 h-6 text-white"></i>
+                        </div>
+                        <div>
+                            <span class="text-xl font-bold text-white">Galdino</span>
+                            <span class="text-xl font-bold text-brand-light"> Seguros</span>
+                        </div>
+                    </div>
+                    <p class="text-white/60 text-sm leading-relaxed mb-6">
+                        Corretora de seguros especializada em proteger pessoas e empresas. Consultoria personalizada, parcerias com as melhores seguradoras e atendimento que faz a diferença.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-blue rounded-xl flex items-center justify-center transition-colors">
+                            <i data-lucide="facebook" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-blue rounded-xl flex items-center justify-center transition-colors">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-blue rounded-xl flex items-center justify-center transition-colors">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-white/10 hover:bg-brand-blue rounded-xl flex items-center justify-center transition-colors">
+                            <i data-lucide="youtube" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Col 2 - Links rápidos -->
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-6">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#inicio" class="text-white/80 hover:text-brand-light transition-colors text-sm">Início</a></li>
+                        <li><a href="#sobre" class="text-white/80 hover:text-brand-light transition-colors text-sm">Sobre Nós</a></li>
+                        <li><a href="#seguros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Nossos Seguros</a></li>
+                        <li><a href="#sinistros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Sinistros e Suporte</a></li>
+                        <li><a href="#parceiros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Parceiros</a></li>
+                        <li><a href="#contato" class="text-white/80 hover:text-brand-light transition-colors text-sm">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 - Seguros -->
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-6">Seguros</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#seguros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Seguro Auto</a></li>
+                        <li><a href="#seguros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Seguro Residencial</a></li>
+                        <li><a href="#seguros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Seguro Vida</a></li>
+                        <li><a href="#seguros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Seguro Empresarial</a></li>
+                        <li><a href="#seguros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Seguro Saúde</a></li>
+                        <li><a href="#seguros" class="text-white/80 hover:text-brand-light transition-colors text-sm">Seguro Frota</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 - Contato -->
+                <div>
+                    <h4 class="font-bold text-white text-lg mb-6">Contato</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-brand-light shrink-0 mt-0.5"></i>
+                            <span class="text-white/80 text-sm">Av. Paulista, 1000<br>Bela Vista - São Paulo/SP</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="phone" class="w-5 h-5 text-brand-light shrink-0"></i>
+                            <a href="tel:+5513988034156" class="text-white/80 hover:text-brand-light transition-colors text-sm">(13) 98803-4156</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-green-400 shrink-0"></i>
+                            <a href="https://wa.me/5513988034156" target="_blank" class="text-white/80 hover:text-green-400 transition-colors text-sm">WhatsApp (13) 98803-4156</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-brand-light shrink-0"></i>
+                            <a href="mailto:contato@galdinoseguros.com.br" class="text-white/80 hover:text-brand-light transition-colors text-sm">contato@galdinoseguros.com.br</a>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="clock" class="w-5 h-5 text-brand-light shrink-0"></i>
+                            <span class="text-white/80 text-sm">Seg-Sex: 8h-18h | Sáb: 8h-12h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-white/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/70 text-sm text-center">© 2025 Galdino Seguros. Todos os direitos reservados. CNPJ: 00.000.000/0001-00</p>
+                <div class="flex items-center gap-4">
+                    <a href="#" class="text-white/70 hover:text-white text-sm transition-colors">Política de Privacidade</a>
+                    <a href="#" class="text-white/70 hover:text-white text-sm transition-colors">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============ WHATSAPP FLUTUANTE ============ -->
+    <a href="https://wa.me/5513988034156?text=Olá!%20Gostaria%20de%20solicitar%20uma%20cotação." target="_blank" 
+       class="fixed bottom-6 right-6 z-40 w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center shadow-2xl hover:shadow-green-500/40 transition-all float-whatsapp group"
+       id="whatsappBtn">
+        <i data-lucide="message-circle" class="w-8 h-8 text-white"></i>
+        <span class="absolute right-full mr-3 bg-white text-gray-800 px-4 py-2 rounded-xl shadow-lg text-sm font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
+            Falar pelo WhatsApp
+        </span>
+    </a>
+
+    <!-- ============ BOTÃO FIXO SOLICITAR COTAÇÃO ============ -->
+    <div id="stickyCta" class="fixed bottom-6 left-6 z-40 opacity-0 translate-y-4 transition-all duration-300 pointer-events-none">
+        <a href="#cotacao" class="flex items-center gap-2 px-6 py-3 bg-brand-blue text-white font-bold rounded-2xl shadow-xl hover:bg-brand-dark transition-all text-sm">
+            <i data-lucide="file-text" class="w-5 h-5"></i>
+            <span class="hidden sm:inline">Solicitar Cotação</span>
+        </a>
+    </div>
+
+    <!-- ============ SCRIPTS ============ -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // ============ HEADER SCROLL ============
+        const header = document.getElementById('header');
+        const stickyCta = document.getElementById('stickyCta');
+        let lastScroll = 0;
+
+        window.addEventListener('scroll', () => {
+            const current = window.scrollY;
+
+            // Sticky CTA
+            if (current > 600) {
+                stickyCta.classList.remove('opacity-0', 'translate-y-4', 'pointer-events-none');
+                stickyCta.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            } else {
+                stickyCta.classList.add('opacity-0', 'translate-y-4', 'pointer-events-none');
+                stickyCta.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+            }
+
+            lastScroll = current;
+        });
+
+        // ============ MOBILE MENU ============
+        const menuBtn = document.getElementById('menuBtn');
+        const closeMenuBtn = document.getElementById('closeMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+        function openMenu() {
+            mobileMenu.classList.add('open');
+            menuOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.remove('open');
+            menuOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+        // ============ COUNTER ANIMATION ============
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter-value');
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                if (!target) return;
+                
+                const duration = 2000;
+                const step = target / (duration / 16);
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += step;
+                    if (current < target) {
+                        counter.textContent = Math.floor(current).toLocaleString('pt-BR');
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        counter.textContent = target.toLocaleString('pt-BR') + '+';
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+
+        // ============ INTERSECTION OBSERVER ============
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // Trigger counter animation for the numbers section
+                    if (entry.target.querySelector('.counter-value')) {
+                        animateCounters();
+                    }
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // ============ FAQ ACCORDION ============
+        function toggleFaq(btn) {
+            const item = btn.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            const icon = btn.querySelector('.faq-icon');
+            const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+            
+            // Close all
+            document.querySelectorAll('.faq-answer').forEach(a => {
+                a.style.maxHeight = '0px';
+            });
+            document.querySelectorAll('.faq-icon').forEach(i => {
+                i.style.transform = 'rotate(0deg)';
+            });
+
+            // Open clicked if was closed
+            if (!isOpen) {
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // ============ CONTACT FORM ============
+        const contactForm = document.getElementById('contactForm');
+        const formSuccess = document.getElementById('formSuccess');
+
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            contactForm.style.display = 'none';
+            formSuccess.classList.remove('hidden');
+            // Re-init icons for success message
+            lucide.createIcons();
+        });
+
+        // ============ SMOOTH SCROLL ============
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = 80;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // ============ ACTIVE NAV LINK ============
+        const sections = document.querySelectorAll('section[id]');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (window.pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('nav-active');
+                if (link.getAttribute('href') === '#' + current) {
+                    link.classList.add('nav-active');
+                }
+            });
+        });
+
+        // ============ INITIAL LOAD ANIMATION ============
+        window.addEventListener('load', () => {
+            document.querySelectorAll('.fade-up').forEach((el, i) => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, i * 100);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
